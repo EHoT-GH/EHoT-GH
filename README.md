@@ -19,13 +19,11 @@
 <h2>Task 3</h2>
 <p>
 	<h3>3.1</h3>
-	<p>
-		<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/blog.html">Blog - JETRO</a>
-		<img src="htmlcss-homework/CSS-homework/Valid css-hw.png">
-	</p>
+	<p><a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/blog.html">Blog - JETRO</a>
+	<img src="htmlcss-homework/CSS-homework/Valid css-hw.png"></p>
 	<hr>
+	<h3>3.2</h3>
 	<p>
-		<h3>3.2</h3>
 		<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/about.html">About - JETRO</a>
 		<img src="htmlcss-homework/CSS-homework/Valid css-hw2.png">
 	</p>
