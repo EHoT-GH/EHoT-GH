@@ -1,0 +1,100 @@
+body{
+	background-color: #ccc;
+}
+.conteiner{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: auto;   
+}
+.content {
+	font-family: Verdana;
+	font-size: 42px;
+	text-align: center;
+	color: #666;
+}
+.content span{
+	font-weight: bolder;
+	text-align: justify;
+}
+/* width < 320px */
+@media screen and (min-width : 0px){
+	.phone{
+		display: none;
+	}
+	.tablet{
+		display: none;
+	}
+	.large{
+		display: none;
+	}
+	.widescreen{
+		display: none;
+	}
+}
+/* Small screen */
+@media screen and (min-width : 320px) {
+	.phone{
+		display: block;
+	}
+	.tablet{
+		display: none;
+	}
+	.large{
+		display: none;
+	}
+	.widescreen{
+		display: none;
+	}
+}
+/* Tablet */
+@media screen and (min-width : 720px) {
+	.phone{
+		display: none;
+	}
+	.tablet{
+		display: block;
+		font-size: 90px;
+	}
+	.large{
+		display: none;
+	}
+	.widescreen{
+		display: none;
+	}
+}
+/* Desktop */
+@media screen and (min-width : 1024px) {
+	.phone{
+		display: none;
+	}
+	.tablet{
+		display: none;
+	}
+	.large{
+		display: block;
+		font-size: 140px;
+	}
+	.widescreen{
+		display: none;
+	}
+}
+/* Wide Screen */
+@media screen and (min-width : 1366px) {
+	.phone{
+		display: none;
+	}
+	.tablet{
+		display: none;
+	}
+	.large{
+		display: none;
+	}
+	.widescreen{
+		display: block;
+		font-size: 180px;
+	}
+}
