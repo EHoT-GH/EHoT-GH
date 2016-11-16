@@ -19,9 +19,12 @@ HTML&CSS Homework
 <h1>Task 3</h1>
 	<p>
 	<h2>3.1</h2>
+	<p>
 	<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/blog.html">Blog - JETRO</a>
 	<img src="htmlcss-homework/CSS-homework/Valid css-hw.png">
+	</p>
 	<hr>
+	<p>
 	<h2>3.2</h2>
 	<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/about.html">About - JETRO</a>
 	<img src="htmlcss-homework/CSS-homework/Valid css-hw2.png">
