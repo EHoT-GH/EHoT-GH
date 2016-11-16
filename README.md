@@ -1,5 +1,3 @@
-# EHoT-GH.github.io
-
 <h1>HTML&CSS Homework</h1>
 <hr>
 <h2>Task 1</h2>
@@ -27,4 +25,3 @@
 		<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/about.html">About - JETRO</a>
 		<img src="htmlcss-homework/CSS-homework/Valid css-hw2.png">
 	</p>
-	<hr>
