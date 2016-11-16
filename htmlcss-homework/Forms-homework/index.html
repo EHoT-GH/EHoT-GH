@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Forms HomeWork</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        fieldset {
+            border: 1px solid grey;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            width: 150px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+       <div id="main">
+          <div id="container">
+             <div id="content" role="main">
+                <header>
+                    <div><h1>Order Form</h1></div>
+                </header>
+                <form name="orderForm">
+                    <fieldset>
+                        <legend>General Info</legend>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <br>
+                        <label for="login">Login</label>
+                        <input type="text" id="login" placeholder="Login" name="login" pattern="^[A-Za-z1-3]+$" title="Only letters and digits 1-3" required>
+                        <br>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password" name="password" required>
+                        <br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>User Info</legend>
+                        <label for="first_name">First name</label>
+                        <input type="text" id="first_name" placeholder="John" pattern="^[A-Za-z]+$" name="firstname" required>
+                        <br>
+                        <label for="second_name">Second name</label>
+                        <input type="text" id="second_name" placeholder="Doe" pattern="^[A-Za-z]+$" name="second_name" required>
+                        <br>
+                        <label>Gender</label>
+                        Male <input type="checkbox" name="male" value="1"> 
+                        Female <input type="checkbox" name="female" value="0"> 
+                        <br>
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" placeholder="32" required>
+                        <br>
+                        <label for="about_me">About Me</label>
+                        <textarea id="about_me" name="about_me" cols="20" rows="5" required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Order Info</legend>
+                        <label for="product">Product</label>
+                        <select id="product" name="Product" required>
+                            <option value="iPhone">iPhone</option>
+                            <option value="GalaxyTab">Galaxy Tab</option>
+                            <option value="Samsung">Samsung</option>
+                            <option value="anyAndroid">Any Android Device</option>
+                        </select>
+                        <br>
+                        <label>Front color</label>
+                        Black<input type="radio" id="black" name="color" checked>
+                        Pink<input type="radio" id="pink" name="color">
+                        Gold<input type="radio" id="gold" name="color">
+                        <br>
+                        <label for="bs_color">Back-side color</label>
+                        <input id="bs_color" type="color">
+                        <br>
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" name="amount" placeholder="5" required>
+                        <br>
+                        <label for="date">Delivery Date</label>
+                        <input type="date" id="date">
+                    </fieldset>
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
