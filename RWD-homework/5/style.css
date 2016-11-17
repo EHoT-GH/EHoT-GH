@@ -1,0 +1,29 @@
+a {
+  display: inline-block;
+  min-width: 256px;
+  padding: 15px 29px;
+  margin: 2rem;
+  font-family: sans-serif;
+  font-size: xx-large;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #555555;
+  border: 1px solid #a1a1a1;
+  border-radius: 15px;
+  background: linear-gradient(#eeeeee, #aaaaaa);
+  box-shadow: 0px 0px 7px 3px #555555, 0px 0px 0px 10px #dddddd, 0px 0px 0px 12px white, 0px 0px 0px 14px #999999;
+  text-shadow: 0px 0px 3px #eeeeee;
+}
+
+a:before {
+  padding-right: 3px;
+  content: "★";
+  color: #999999;
+}
+
+a:after {
+  padding-left: 53x;
+  content: "★";
+  color: #999999;
+}
