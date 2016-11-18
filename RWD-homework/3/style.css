@@ -27,7 +27,7 @@
 	background: #58B854;
 }
 .content {
-	height: 777px;
+	height: 777px;;
 	width: calc(96% -  36.6%);
 	background: #FF6666;
 }
@@ -68,7 +68,7 @@
 /* Middle Devices, Tablets */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.header {
-		height: 150px;
+		height: 100px;
 		background: #487DBB;
 	}
 	.content, .sidebar {
@@ -81,12 +81,12 @@
 		background: #58B854;
 	}
 	.content {
-		height: 420px;
+		height: 666px;
 		width: calc(100% - 36%) ;
 		background: #FF6666;
 	}
 	.sidebar {
-		height: 420px;
+		height: 666px;
 		width: 34%;
 		background: #FFBE43;
 		float: right;
