@@ -21,18 +21,18 @@
 	margin: 0 2% 2% 2%;
 }
 .navbar {
-	height: 82vh;
+	height: 81vh;
 	width: 20%;
 	margin-right: 2%;
 	background: #58B854;
 }
 .content {
-	height: 82vh;;
+	height: 81vh;;
 	width: calc(96% -  36.6%);
 	background: #FF6666;
 }
 .sidebar {
-	height: 82vh;
+	height: 81vh;
 	width: 16%;
 	background: #FFBE43;
 	margin-left: 2%;
