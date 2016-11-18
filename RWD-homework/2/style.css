@@ -11,14 +11,13 @@ body{
 	overflow: auto;   
 }
 .content {
-	font-family: Verdana;
+	font-family: Impact, sans-serif;
 	font-size: 42px;
 	text-align: center;
 	color: #666;
 }
 .content span{
 	font-weight: bolder;
-	text-align: justify;
 }
 /* width < 320px */
 @media screen and (min-width : 0px){
