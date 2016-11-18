@@ -19,7 +19,7 @@
 	margin-top: 20px;
 }
 .slider {
-	height: 220px;
+	height: 400px;
 	background: #F18E3C;
 	margin-top: 20px;
 }
@@ -44,7 +44,7 @@
 .footer {
 	margin-top: 20px;
 	background: #FF92B3;
-	height: 75px;
+	height: 100px;
 }
 /* Extra Small Devices, Phones */
 
@@ -64,24 +64,24 @@
 		margin-top: 5px;
 	}
 	.slider {
-		height: 105px;
+		height: 220px;
 		margin-top: 5px;
 	}
 	.content-left {
-		height: 100px;
+		height: 200px;
 		margin-top: 5px;		
 	}
 	.content-middle {
-		height: 100px;
+		height: 200px;
 		margin-top: 5px;
 	}
 	.content-right {
-		height: 100px;
+		height: 200px;
 		margin-top: 5px;
 	}
 	.footer {
 		display: block;
-		height: 75px;
+		height: 150px;
 		margin-top: 10px;
 	}
 }
@@ -104,19 +104,19 @@
 		margin-top: 10px;
 	}
 	.slider {
-		height: 210px;
+		height: 330px;
 		margin-top: 10px;
 	}
 	.content-left {
-		height: 100px;
+		height: 150px;
 		margin-top: 10px;
 	}
 	.content-middle {
-		height: 100px;
+		height: 150px;
 		margin-top: 10px;
 	}
 	.content-right {
-		height: 100px;
+		height: 150px;
 		margin-top: 10px;
 	}
 	.footer {
@@ -135,18 +135,18 @@
 		height: 90px;
 	}
 	.slider {
-		height: 200px;
+		height: 400px;
 	}
-		.content-left {
-		height: 200px;
+	.content-left {
+		height: 350px;
 		margin-top: 20px;
 	}
 	.content-middle {
-		height: 200px;
+		height: 350px;
 		margin-top: 20px;
 	}
 	.content-right {
-		height: 200px;
+		height: 350px;
 		margin-top: 20px;
 	}
 	.footer {
