@@ -9,33 +9,33 @@
 }
 .header {
 	height: 12vh;
-	width: 96%;
+	width: calc(100% - 40px);
 	background: #487DBB;
-	margin: 2vh auto;
+	margin: 20px 20px;
 }
 .navbar, .content, .sidebar {
 	display: inline-block;
 }
 .container{
-	width: 96%;
-	margin: 0 2% 2% 2%;
+	width: calc(100% - 40px);
+	padding: 0 20px 20px 20px;
 }
 .navbar {
-	height: 81vh;
+	height: 82vh;
 	width: 20%;
-	margin-right: 2%;
+	margin-right: 20px;
 	background: #58B854;
 }
 .content {
-	height: 81vh;;
-	width: calc(96% -  36.6%);
+	height: 82vh;
+	width: calc(100% - 35% - 45px);
 	background: #FF6666;
 }
 .sidebar {
-	height: 81vh;
-	width: 16%;
+	height: 82vh;
+	width: 15%;
 	background: #FFBE43;
-	margin-left: 2%;
+	margin-left: 20px;
 	float: right;
 }
 /* Width <320px */
@@ -87,7 +87,7 @@
 	}
 	.sidebar {
 		height: 68vh;
-		width: 34%;
+		width: 33%;
 		background: #FFBE43;
 		float: right;
 	}
