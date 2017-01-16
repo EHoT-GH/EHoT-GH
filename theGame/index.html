@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Game</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="space"></div>
+	<div class="body">
+		<div class="header">The Game: Rock, Scissors, Paper.</div>
+		<div class="space"></div>
+		<h5>Choose one element <br>and press 'Start>'</h5>
+		<div class="space"></div>
+		<div class="images">
+			<img id="1" class="choose" src="img/rock.png" alt="ROCK" height="150px" onclick="imgChoise = '1', opacity()" />
+			<img id="2" class="choose" src="img/scissors.png" alt="SCISSORS" height="150px" onclick="imgChoise = '2', opacity()" />
+			<img id="3" class="choose" src="img/paper.png" alt="PAPER" height="150px" onclick="imgChoise = '3', opacity()" />
+		</div>	
+		<div class="space"></div>
+		<div class="buttons">
+			<img src="img/start.png" alt="start" height="150px" onclick="startGame()" />
+			<img class="refresh" src="img/refresh.png" alt="refresh" height="150px" onclick="location.reload()" />
+		</div>
+		<div class="result">
+			<h4 id="userChoise"></h4><h4 id="pcChoise"></h4>
+			<h1 id="result"></h1>
+			<div class="space"></div>
+		</div>
+		<p id="wins">WINS: <span id="winsCounter">0</span></p>
+		<p id="loses">LOSES: <span id="losesCounter">0</span></p>
+	</div>
+	<script src="scripts/game.js"></script>
+</body>
+</html>
