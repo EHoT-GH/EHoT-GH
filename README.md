@@ -11,7 +11,7 @@
 <a href="https://ehot-gh.github.io/htmlcss-homework/Forms-homework/index.html">link</a>
 
 <h1>CSS homework:</h1>
-<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/blog.html">link</a>
+<a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/blog.html">link</a><br>
 <a href="https://ehot-gh.github.io/htmlcss-homework/CSS-homework/about.html">link</a>
 
 <h1>RWD homework:</h1>
