@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>The Game</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="http://allfont.net/allfont.css?fonts=eurostyle-normal" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="space"></div>
+	<div class="body">
+		<fieldset>
+			<div class="space"></div>
+			<p class="inst">Угадай число!<br>от 1 до 99.</p>
+			<div class="space"></div>
+			<div class="space">
+				<div id="stars"></div>
+			</div>
+			<input class="buttons" type="reset" value="Очистить" onClick="resetGame()">
+			<input type="number" id="userNumber" name="numberField" min="1" max="99" size="1" maxlength="2" autofocus>
+			<input class="buttons" type="submit" value="Проверить!" onClick="getUserNumber()">
+			<div class="space">
+				<p id="totalExp"> </p>
+			</div>
+			<div class="console">
+				<div id="progress"></div>
+				<div id="history"></div>
+				<div id="result"></div>
+				<div id="wins">Число загадано!</div>
+			</div>
+		</fieldset>
+	</div>
+	<footer>
+		<div class="version">
+			<p>version 0.0.5 alpha</p>
+		</div>
+	</footer>
+	<script src="scripts/game.js"></script>
+</body>
+</html>

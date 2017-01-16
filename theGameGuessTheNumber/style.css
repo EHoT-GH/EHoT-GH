@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	cursor: default;
+	-ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none;
+	line-height: 1;
+	color: white;
+	background: #7bbd75;
+	background-image: url('img/background.jpg');
+	font-family: 'EuroStyle Normal', arial;
+	font-weight: bold;
+	letter-spacing: 4.2px;
+}
+
+.space {
+	height: 50px;
+}
+
+.body {
+	width: 960px;
+	margin: auto;
+	text-align:  center;
+	font-size: 36px;
+	text-shadow: 2px 2px 5px black;
+	background-color: #7bbd75;
+	opacity: 0.9;
+}
+
+#userNumber {
+	text-align: right;
+	width: 69px;
+	height: 38px;
+	font-size: 36px;
+	border-radius: 8px;
+}
+
+.buttons {
+	width: 96px;
+	height: 42px;
+	border-radius: 8px;
+}
+
+input {
+	vertical-align: middle;
+}
+
+#totalExp {
+	color: #E2ECF2;
+}
+
+.console {
+	padding-left: 10px;
+	background-color: black;
+	min-height: inherit;
+	text-align: left;
+	font-size: 30px;
+	opacity: 0.7;
+}
+
+#wins {
+	color: #1dc942;
+}
+
+#stars {
+	height: 42px;
+}
+
+.version {
+	color: #afd7ac;
+	padding-top: 10px;
+	background-color: #7bbd75;
+	opacity: 0.7;
+	position: absolute;
+	text-align: center;
+	height: 24px;
+	bottom: 0;
+	width: 100%;
+}
