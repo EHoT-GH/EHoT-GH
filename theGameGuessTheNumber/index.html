@@ -7,25 +7,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
-	<div class="space"></div>
 	<div class="body">
 		<fieldset>
-			<p class="inst">Угадай число!<br>от 1 до 99.</p>
-			<div class="spacex2">
-				<h1 class="rules">Правила игры:</h1>
-				<p class="rules">Твой компьютер уже загадал число, тебе нужно его отгадать. <br>
-				Впиши в поле число от 1 до 99 и нажми "Проверить!". <br>
-				Компьютер сверит их, и подскажет <span class="moreThan">"больше"</span> оно или <span class="lessThan">"меньше"</span>.<br>
-				Чем быстрее отгадаешь, тем больше опыта получишь. Удачи!</p>
-			</div>
-			<div class="space">
-				<div id="stars"></div>
-			</div>
-			<input class="buttons" type="reset" value="Очистить" onClick="resetGame()">
-			<input type="number" id="userNumber" name="numberField" min="1" max="99" size="1" maxlength="2" autofocus>
-			<input class="buttons" type="submit" value="Проверить!" onClick="getUserNumber()">
-			<div class="space">
-				<p id="totalExp"> </p>
+			<div id="header">
+				<h1 class="inst">Угадай число!<br>от 1 до 99.</h1>
+				<div class="spacex2">
+					<h1 class="rules">Правила игры:</h1>
+					<p class="rules">Твой компьютер уже загадал число, тебе нужно его отгадать.	Впиши в поле число от 1 до 99 и нажми "Проверить!". Компьютер сверит их, и подскажет <span class="moreThan">"больше"</span> оно или <span class="lessThan">"меньше"</span> загаданного. Чем быстрее отгадаешь, тем больше опыта получишь. <span class="moreThan">Удачи!</span></p>
+				</div>
+				<div class="spaceStars">
+					<div id="stars"></div>
+				</div>
+				<input class="buttons" type="reset" value="Очистить" onClick="resetGame()">
+				<input type="number" id="userNumber" name="numberField" min="1" max="99" size="1" maxlength="2" autofocus>
+				<input class="buttons" type="submit" value="Проверить!" onClick="getUserNumber()">
+				<div class="space">
+					<p id="totalExp"> </p>
+				</div>
 			</div>
 			<div class="console">
 				<div id="progress"></div>
@@ -36,7 +34,7 @@
 		</fieldset>
 	</div>
 	<footer>
-		<div class="version">
+		<div id="version">
 			<p>version 0.0.6 alpha</p>
 		</div>
 	</footer>

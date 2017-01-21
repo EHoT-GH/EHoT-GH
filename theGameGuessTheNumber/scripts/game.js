@@ -14,7 +14,20 @@ function getUserNumber() {
 function countInfoMsg() {
 	var infoMsgLen = document.getElementById("progress").childNodes.length;
 	var resDiv = document.getElementById("progress").querySelectorAll(".resultPara");
-	if (infoMsgLen >= 15) {
+
+	var viewportHeight = window.innerHeight;
+	var headerHeight = document.getElementById("header").offsetHeight;
+	var footerHeight = document.getElementById("version").offsetHeight;
+	var itemsHeight = 0;
+	var consoleHeight =  /* viewportHeight - headerHeight - footerHeight;*/ document.getElementsByClassName("console")[0].offsetHeight;
+	console.log(consoleHeight);
+	[].forEach.call(document.getElementById("progress").childNodes, function(item){
+		itemsHeight += item.offsetHeight;
+	});
+
+	consoleHeight
+
+	if (consoleHeight >= (viewportHeight - (headerHeight + footerHeight))) {
 		resDiv[0].remove();
 	}
 }
@@ -42,6 +55,11 @@ function userWin() {
 	doVerifyNum(0);
 	tryCount = 1;
 	tryCountItem = 0;
+
+	var resDiv = document.getElementById("progress").querySelectorAll(".resultPara");
+	[].forEach.call(resDiv, function(item){
+		item.remove();
+	});
 }
 
 function writeLog(costValue, color) {
@@ -132,7 +150,7 @@ function createStars(value) {
 		winStar.setAttribute('src', 'img/star.png');
 	}
 
-	winStar.setAttribute('width', '42');
+	winStar.setAttribute('width', '80');
 	winStar.setAttribute('alt', 'Star of victory!');
 	document.getElementById('stars').appendChild(winStar);
 }
