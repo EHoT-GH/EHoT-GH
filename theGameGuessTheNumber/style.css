@@ -73,12 +73,13 @@ input {
 
 .version {
 	color: #afd7ac;
-	padding-top: 10px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
 	background-color: #7bbd75;
 	opacity: 0.7;
-	position: absolute;
 	text-align: center;
-	height: 24px;
-	bottom: 0;
 	width: 100%;
 }

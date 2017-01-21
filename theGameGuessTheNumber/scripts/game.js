@@ -8,6 +8,14 @@ function getUserNumber() {
 	} else {
 		doVerifyNum(userNum);
 	}
+	countInfoMsg();
+}
+
+function countInfoMsg() {
+	var infoMsgLen = document.getElementById("progress").childNodes.length;
+	if (infoMsgLen >= 15) {
+		document.getElementById("progress").childNodes[0].remove();
+	}
 }
 
 function userWin() {
