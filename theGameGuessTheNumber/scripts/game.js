@@ -150,13 +150,14 @@ function createStars(value) {
 		winStar.setAttribute('src', 'img/star.png');
 	}
 
-	winStar.setAttribute('width', '80');
+	winStar.setAttribute('width', '66');
 	winStar.setAttribute('alt', 'Star of victory!');
 	document.getElementById('stars').appendChild(winStar);
 }
 
 var pcNum = AiIsGenerating(), count = 0, userNum, costValue;
 var tryCount = 1, tryCountItem, expPoint, expTotalPoints = 0;
+var popupCondition = true;
 
 function tryCountCalc() {
 	switch(tryCount) {
@@ -177,6 +178,17 @@ function AiIsGenerating() {
 		num = Math.ceil(Math.random() * 100)
 	} while (num < 1 || num > 99);
 	return num;
+}
+
+function closeOpenPopup() {
+	if (popupCondition == true) {
+		popupCondition = false;
+		document.getElementById('popup').style.display='none';
+	} else {
+		document.getElementById('popup').style.display='inline-block';
+		popupCondition = true;
+	}
+
 }
 
 var userNumber = document.getElementById("userNumber");
