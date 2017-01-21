@@ -13,8 +13,9 @@ function getUserNumber() {
 
 function countInfoMsg() {
 	var infoMsgLen = document.getElementById("progress").childNodes.length;
+	var resDiv = document.getElementById("progress").querySelectorAll(".resultPara");
 	if (infoMsgLen >= 15) {
-		document.getElementById("progress").childNodes[0].remove();
+		resDiv[0].remove();
 	}
 }
 
@@ -53,7 +54,9 @@ function writeLog(costValue, color) {
 	text += costValue;
 	document.getElementById('result').innerHTML = 'Загаданное число' + text;
 	document.getElementById('result').style.color = color;
+	
 	var paraPro = document.createElement("P");
+	paraPro.className = "resultPara";
 	var textPro = document.createTextNode('Твое число: ' + userNum + ' Загаданное: ' + costValue);
 	paraPro.appendChild(textPro);
 	document.getElementById("progress").appendChild(paraPro);
@@ -106,12 +109,17 @@ function resetGame() {
 }
 
 function expCount() {
-	expPoint = 11 - tryCount;
+	
+	if (tryCount >= '11') {
+		expPoint = '0';
+	} else {
+		expPoint = 11 - tryCount;
+	}
 	return expPoint;
 }
 
 function totalExpPoints() {
-	expTotalPoints += expPoint;
+	expTotalPoints += Math.floor(expPoint);
 	return expTotalPoints;
 }
 

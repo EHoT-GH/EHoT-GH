@@ -12,24 +12,63 @@ body {
 	line-height: 1;
 	color: white;
 	background: #7bbd75;
-	background-image: url('img/background.jpg');
+	background-image: url('img/background.gif');
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: top center;
 	font-family: 'EuroStyle Normal', arial;
 	font-weight: bold;
 	letter-spacing: 4.2px;
 }
 
 .space {
-	height: 50px;
+	height: 42px;
 }
 
+.spacex2 {
+	height: 100px;
+	background-color: #3e9dfd;
+	box-shadow: 0px 5px 5px #183e65;
+}
+
+
 .body {
-	width: 960px;
+	width: 968px;
 	margin: auto;
 	text-align:  center;
 	font-size: 36px;
 	text-shadow: 2px 2px 5px black;
 	background-color: #7bbd75;
-	opacity: 0.9;
+	opacity: 0.91;
+}
+
+.inst {
+	margin: 10px 0;
+}
+
+h1.rules {
+	padding-top: 5px;
+	color: red;
+	font-size: 20px;
+	height: 25px;
+	background-color: #3e9dfd;
+}
+
+p.rules {
+	color: #ccc;
+	font-size: 16px;
+	background-color: #3e9dfd;
+}
+
+span.lessThan {
+	font-size: 18px;
+	color: #77bafd;
+	text-shadow: 2px 2px 8px #000;
+}
+
+span.moreThan {
+	font-size: 18px;
+	color: rgb(242, 71, 71);
 }
 
 #userNumber {
