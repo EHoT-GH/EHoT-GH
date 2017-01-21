@@ -1,5 +1,5 @@
 <h1>The Game: Guess the Number</h1>
-<a href="https://ehot-gh.github.io/theGameGuessTheNumber/">the Game v0.0.6 alpha</a>
+<a href="https://ehot-gh.github.io/theGameGuessTheNumber/">the Game v0.0.7 alpha</a>
 
 <h1>The Game: Rock, scissors, paper.</h1>
 <a href="https://ehot-gh.github.io/theGame/">the Game: RSP</a>
