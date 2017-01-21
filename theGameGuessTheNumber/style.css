@@ -113,6 +113,13 @@ input {
 	height: 84px;
 }
 
+#phone {
+	display: none;
+}
+#comp {
+	display: inline-block;
+}
+
 #version {
 	color: #afd7ac;
 	position: fixed;
@@ -206,4 +213,15 @@ input {
 		height: 84px;
 	}
 
+	#respDesigh {
+		display: none;
+	}
+
+	#phone {
+		display: inline-block;
+	}
+
+	#comp {
+		display: none;
+	}
 }
