@@ -11,4 +11,4 @@
 <hr>
 <a href="https://ehot-gh.github.io/theGameGuessTheNumber/">Task#6 (Bonus)</a>
 <hr>
-<a href="https://ehot-gh.github.io/theGameGuessTheNumberTask7/">Task#6 (Bonus)</a>
+<a href="https://ehot-gh.github.io/theGameGuessTheNumberTask7/">Task#7</a>
