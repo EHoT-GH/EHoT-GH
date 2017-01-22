@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	cursor: default;
+	-ms-user-select: none; 
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	user-select: none;
+	line-height: 1;
+	color: white;
+	background: #7bbd75;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: top center;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.space {
+	height: 42px;
+}
+
+.body {
+	margin-top: 20px;
+	width: 968px;
+	margin: auto;
+	text-align:  center;
+	font-size: 36px;
+	text-shadow: 2px 2px 5px black;
+	background-color: #7bbd75;
+	opacity: 0.91;
+}
+
+.inst {
+	margin: 10px 0;
+	font-size: 42px;
+}
+
+.buttons {
+	width: 96px;
+	height: 42px;
+	border-radius: 8px;
+}
+
+#wins {
+	color: #1dc942;
+}
+
+#stars {
+	min-height: 69px;
+}
