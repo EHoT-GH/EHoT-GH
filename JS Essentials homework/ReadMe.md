@@ -9,5 +9,6 @@
 <hr>
 <a href="https://ehot-gh.github.io/JS%20Essentials%20homework/tast5.html">Task#5</a>
 <hr>
-<a href="https://ehot-gh.github.io/theGameGuessTheNumber/">Task#6-7 (Bonus)</a>
+<a href="https://ehot-gh.github.io/theGameGuessTheNumber/">Task#6 (Bonus)</a>
 <hr>
+<a href="https://ehot-gh.github.io/theGameGuessTheNumberTask7/">Task#6 (Bonus)</a>
