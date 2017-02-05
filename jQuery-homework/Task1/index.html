@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQueryTask1</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
+</head>
+<body>
+	<form validate>
+  <input placeholder="name" name="name" value="" validate-required validate-minlength="5" validate-maxlength="30" />
+
+  <input placeholder="email" name="email" value="" validate-required validate-email />
+
+  <input placeholder="date" name="date" value="" validate-date />
+
+  <input placeholder="ip" name="ip" value="" validate-regexp="^\d+\.\d+\.\d+\.\d+$" />
+
+  <input type="submit" value="Send" />
+</form>
+	<script type="text/javascript" src="jquerytask1.js"></script>
+</body>
+</html>
