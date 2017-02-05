@@ -11,7 +11,7 @@ $.fn.extend({
 			var element = $(this);
 			var fullText = element.text();
 			if (maxLength < 0 || fullText.length < maxLength) {
-				alert("value should be > 0 and <" + (fullText.length-1));
+				//alert("value should be > 0 and <" + (fullText.length-1));
 				return;
 			}
 			var visibleText = fullText.slice(0, maxLength);

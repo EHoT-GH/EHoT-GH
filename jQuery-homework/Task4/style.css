@@ -56,6 +56,11 @@ p {
 
 ul {
 	padding-left: 18px;
+	padding-bottom: 18px;
+}
+
+h3 span {
+	color: #991414;
 }
 
 a {
