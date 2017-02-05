@@ -1,9 +1,12 @@
-body{
+*{
 	padding: 0;
 	margin: 0;
-	background: black;
+}
+
+body {
+	background: #222;
 	text-align: center;
-	font-family: sans-serif;
+	font-family: verdana;
 	font-weight: 100;
 }
 
@@ -12,14 +15,15 @@ header{
 }
 
 h1{
-	color: #fff;
+	color: #990000;
+	text-shadow: 2px 2px 8px #000;
 	font-weight: 100;
 	font-size: 40px;
 	margin: 0px 0px 20px;
 }
 
 #clockdiv{
-	font-family: sans-serif;
+	font-family: verdana;
 	color: black;
 	display: inline-block;
 	font-weight: bold;
@@ -45,10 +49,7 @@ h1{
 	padding-top: 5px;
 	font-size: 16px;
 }
+
 .clock{
 	padding:18% 0;
-}
-.it{
-	background: black;
-	color:white;
 }

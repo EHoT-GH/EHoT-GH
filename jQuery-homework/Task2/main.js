@@ -42,5 +42,4 @@ $( document ).ready(function() {
 
 	var deadline = new Date(Date.parse(new Date()) + 90 * 24 * 60 * 60 * 1000+86535000);
 	initializeClock('clockdiv', deadline);
-
 });
