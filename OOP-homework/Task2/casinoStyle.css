@@ -1,0 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	margin: 20px auto;
+	width: 768px;
+}
+
+.buttons {
+	padding: 5px;
+	border-radius: 3px;
+}
