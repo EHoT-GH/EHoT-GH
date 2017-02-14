@@ -1,0 +1,34 @@
+[
+  {
+    "picture": "http://placehold.it/32x32",
+    "age": 22,
+    "name": "Lloyd Cherry",
+    "company": "ENDICIL",
+    "email": "lloydcherry@endicil.com",
+    "phone": "+1 (826) 459-3494"
+  },
+  {
+    "picture": "http://placehold.it/32x32",
+    "age": 36,
+    "name": "Florine Lewis",
+    "company": "BUGSALL",
+    "email": "florinelewis@bugsall.com",
+    "phone": "+1 (848) 503-2485"
+  },
+  {
+    "picture": "http://placehold.it/32x32",
+    "age": 31,
+    "name": "Diaz Pruitt",
+    "company": "BYTREX",
+    "email": "diazpruitt@bytrex.com",
+    "phone": "+1 (846) 495-2692"
+  },
+  {
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "name": "Terry Ryan",
+    "company": "ISOTRACK",
+    "email": "terryryan@isotrack.com",
+    "phone": "+1 (964) 476-2653"
+  }
+]
