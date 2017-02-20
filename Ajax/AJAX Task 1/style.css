@@ -1,0 +1,46 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Sans-serif;	
+}
+
+body {
+	background-color: #222;
+	color: #ddd;
+}
+.container{
+	width: 80vw;
+	height: 100vh;
+	margin: auto;
+}
+#map {
+	margin: auto;
+	height: 50%;
+	width: 50%;
+	border-radius: 50%;
+}
+#weather {
+	height: 50%;
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+}
+.city{
+	color: #C2A83E;
+}
+
+.dataweather{
+	color: #77a0a9;
+}
+
+input {
+	margin-top: 25px;
+	width: 42px;
+	height: 42px;
+	font-size: 20px;
+}
+
+.hide{
+	display: none;
+}
