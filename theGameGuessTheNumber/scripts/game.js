@@ -4,52 +4,59 @@ function createDiv() {
 	var $newElems, counter = 1;
 
 	while (counter < 100) {
-		$newElems = $('<div id="elem' + counter + '" class="newElem" data-title="' + counter + '"></div>');
+		$newElems = $('<div id="elem' + counter + '" class="newElem" data-title="' + counter + '" value="' + counter + '"></div>');
 		$('#createElems').append($newElems);
 		counter++;
 	}
 }
 
-var userNumber = document.getElementById("userNumber");
-userNumber.addEventListener("keydown", function (e) {
-	if (e.keyCode === 13) {
+var userNumber = $("#userNumber");
+userNumber.bind("keydown", function (e) {
+	if (event.which === 13) {
 		getUserNumber();
 	}
 });
 
+
+$('.newElem').click(function () {
+	userNum = $(this).attr("value");
+	$('#userNumber').val(userNum);
+	doVerifyNum(userNum);
+});
+
 function getUserNumber() {
-	userNum = document.getElementById('userNumber').value;
-	document.getElementById('userNumber').select();
+	userNum = $('#userNumber').val();
+	$('#userNumber').select();
 	
 	if (userNum < 1 || userNum > 99) {
 		userNum = (userNum < 1 ? 1 : 99);
-		document.getElementById('userNumber').value = userNum;
+		$('#userNumber').val(userNum);
 	} else {
 		doVerifyNum(userNum);
 	}
-	countInfoMsg();
+	//countInfoMsg();
 }
 
-function countInfoMsg() {
-	var infoMsgLen = document.getElementById("progress").childNodes.length;
-	var resDiv = document.getElementById("progress").querySelectorAll(".resultPara");
+// function countInfoMsg() {
+// 	var infoMsgLen = $("#progress").children().length;
+// 	var resDiv = $("#progress").find(".resultPara");
 
-	var viewportHeight = window.innerHeight;
-	var headerHeight = document.getElementById("header").offsetHeight;
-	var footerHeight = document.getElementById("version").offsetHeight;
-	var itemsHeight = 0;
-	var consoleHeight =  /* viewportHeight - headerHeight - footerHeight;*/ document.getElementsByClassName("console")[0].offsetHeight;
-	console.log(consoleHeight);
-	[].forEach.call(document.getElementById("progress").childNodes, function(item){
-		itemsHeight += item.offsetHeight;
-	});
+// 	var viewportHeight =  window.clientHeight;//$('html').innerHeight();
+// 	var headerHeight = $("#header").outerHeight();
+// 	var footerHeight = $("#version").outerHeight();
+// 	var itemsHeight = 0;
+// 	var consoleHeight =  /* viewportHeight - headerHeight - footerHeight;*/ $(".console").outerHeight(); //.get(0)
+// 	console.log(consoleHeight);
+// 	$("#progress").children().each(function(item){
+// 		itemsHeight += $(item).outerHeight();
+// 	});
 
-	consoleHeight
+// 	consoleHeight;
 
-	if (consoleHeight >= (viewportHeight - (headerHeight + footerHeight))) {
-		resDiv[0].remove();
-	}
-}
+// 	if (consoleHeight >= (viewportHeight - (headerHeight + footerHeight))) {
+// 		$.remove(resDiv.get(0));
+// 	}
+// }
 
 function userWin() {
 	tryCountCalc();
@@ -61,23 +68,26 @@ function userWin() {
 	} else { 
 		createStars(false);
 	}
+	//$('#progress p:last-child').detach();
+	var $textHis= 'Загаданное число ' + userNum + ' - угадано за ' + tryCount + ' ' + tryCountItem + ' Получено ' + expPoint + 'XP.';
+	var $paraHis = $('<p>', {
+		"class": 'resultPara',
+		text: $textHis
+	});
 
-	var paraHis = document.createElement("P");	
-	var textHis = document.createTextNode('Загаданное число ' + userNum + ' - угадано за ' + tryCount + ' ' + tryCountItem + ' Получено ' + expPoint + 'XP.');
-	paraHis.appendChild(textHis);
-	document.getElementById('progress').appendChild(paraHis);
-	document.getElementById('progress').lastChild.style.color = '#31d023';
-	var totalExp= expTotalPoints + ' XP';
-	document.getElementById('totalExp').innerHTML = totalExp;
+	$('#progress').append($textHis);
+	$('#result').css('color', '#31d023');
+	var totalExp = expTotalPoints + ' XP';
+	$('#totalExp').html(totalExp);
 	counter();
 	pcNum = AiIsGenerating();
 	doVerifyNum(0);
 	tryCount = 1;
 	tryCountItem = 0;
 
-	var resDiv = document.getElementById("progress").querySelectorAll(".resultPara");
-	[].forEach.call(resDiv, function(item){
-		item.remove();
+	var $resDiv = $("#progress").find(".resultPara");
+	$resDiv.each(function(item){
+		$(".resultPara").detach();
 	});
 }
 
@@ -88,16 +98,15 @@ function writeLog(costValue, color) {
 	} else {
 		text = ' меньше ';
 	}
-	text += costValue;
-	document.getElementById('result').innerHTML = 'Загаданное число' + text;
-	document.getElementById('result').style.color = color;
-	
-	var paraPro = document.createElement("P");
-	paraPro.className = "resultPara";
-	var textPro = document.createTextNode('Твое число: ' + userNum + ' Загаданное: ' + costValue);
-	paraPro.appendChild(textPro);
-	document.getElementById("progress").appendChild(paraPro);
-	document.getElementById('progress').lastChild.style.color = color;
+
+	var $paraPro = 'Твое число: ' + userNum + ' Загаданное ' + text + ' ' + costValue;
+	var $result  = $('<p>', {
+		"class": 'resultPara',
+		text: $paraPro
+	});
+
+	$('#progress').append($result);
+	$("#progress p:last-child").css('color', color);
 	tryCounter();
 }
 
@@ -106,16 +115,19 @@ function paintLine(userNum, color) {
 	$(uC).css('background-color', color);
 }
 
-function cleanLine(winNum) {
-	var uGold = '#elem' + winNum;
-	$('uGold').css('animation', 'fadeIn 6s');
+function cleanLine(userNum) {
+	var uGold = '#elem' + userNum;
+	$(uGold).removeClass('newElem');
+	$(uGold).css('animation', 'fadeIn 6s');
 	$('.newElem').css('animation', 'fadeOut 6s');
 	setTimeout(function() {
 		$('.newElem').css('background-color', 'rgba(255,255,255, 0.7)');
 	}, 6000);
 	setTimeout(function() {
+		$(uGold).addClass('newElem');
+		$('.newElem').css('background-color', '');
 		$('.newElem').css('animation', '');
-	}, 6660);
+	}, 6000);
 }
 
 function doVerifyNum(userNum) {
@@ -123,21 +135,21 @@ function doVerifyNum(userNum) {
 	if (userNum == 0) {
 		document.getElementById('result').innerHTML = 'Новое число загаданно!';
 	} else if (userNum == pcNum) {
-		costValue = '=';
 		cleanLine(userNum);
+		costValue = '=';
 		userWin();
 	} else if (pcNum < userNum) {
-		paintLine(userNum, '#3e9dfd');
 		writeLog('<', '#3e9dfd');
+		paintLine(userNum, '#3e9dfd');
 	} else if (pcNum > userNum) {
-		paintLine(userNum, '#f24747');
 		writeLog('>', '#f24747');				
+		paintLine(userNum, '#f24747');
 	}
 }
 
 function counter() {
 	count += 1;
-	
+
 	switch (count) {
 		case 2: 
 		case 3: 
@@ -158,15 +170,16 @@ function tryCounter() {
 function resetGame() {
 	pcNum = AiIsGenerating();
 	doVerifyNum();
-	document.getElementById('userNumber').value = '';
-	document.getElementById('progress').innerHTML = '';
-	document.getElementById('history').innerHTML = '';
-	document.getElementById('result').innerHTML = '';
-	document.getElementById('wins').innerHTML = 'Число загадано!';
+	cleanLine();
+	$('#userNumber').value = '';
+	$('#progress').innerHTML = '';
+	$('#history').innerHTML = '';
+	$('#result').innerHTML = '';
+	$('#wins').innerHTML = 'Число загадано!';
 }
 
 function expCount() {
-	
+
 	if (tryCount >= '11') {
 		expPoint = '0';
 	} else {
@@ -229,10 +242,3 @@ function closeOpenPopup() {
 	}
 
 }
-
-var userNumber = document.getElementById("userNumber");
-userNumber.addEventListener("keydown", function (e) {
-	if (e.keyCode === 13) {
-		getUserNumber();
-	}
-});

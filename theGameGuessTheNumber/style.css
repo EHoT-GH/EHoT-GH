@@ -13,9 +13,9 @@ body {
 	color: white;
 	background: #BDDEBA;
 	/*background-image: url('img/background.jpg');*/
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: top center;
+/*	-webkit-background-size: cover;
+	background-size: cover;*/
+/*	background-position: top center;*/
 	font-family: 'Roboto Slab', serif;
 	font-weight: bold;
 	letter-spacing: 2px;
@@ -104,19 +104,31 @@ input {
 }
 
 @keyframes fadeIn {
-	to {background-color: rgba(254,246,91, 0.7);}
+	0% {background-color: rgba(255,255,255, 0.7);}
+	20% {background-color: rgba(255,242,0, 0.8);}
+	80% {background-color: rgba(255,242,0, 0.6);}
+	100% {background-color: rgba(255,255,255, 0.7);}
 }
 
 #createElems {
-	height: 18px;
+	height: 28px;
 }
 
-#createElems .newElem{
+#createElems > div {
 	vertical-align: top;
-	height: 16px;
-	width: 8px;
+	height: 26px;
+	width: 9px;
 	display: inline-block;
 	background-color: rgba(255,255,255, 0.7);
+}
+
+#createElems > div:hover {
+	vertical-align: top;
+	height: 22px;
+	width: 5px;
+	display: inline-block;
+	background-color: rgba(255,255,150, 0.7);
+	border: 2px solid red;
 }
 
 #createElems .newElem:hover::before {
