@@ -1,3 +1,22 @@
+$(document).ready(createDiv());
+
+function createDiv() {
+	var $newElems, counter = 1;
+
+	while (counter < 100) {
+		$newElems = $('<div id="elem' + counter + '" class="newElem" data-title="' + counter + '"></div>');
+		$('#createElems').append($newElems);
+		counter++;
+	}
+}
+
+var userNumber = document.getElementById("userNumber");
+userNumber.addEventListener("keydown", function (e) {
+	if (e.keyCode === 13) {
+		getUserNumber();
+	}
+});
+
 function getUserNumber() {
 	userNum = document.getElementById('userNumber').value;
 	document.getElementById('userNumber').select();
@@ -82,16 +101,36 @@ function writeLog(costValue, color) {
 	tryCounter();
 }
 
+function paintLine(userNum, color) {
+	var uC = '#elem' + userNum;
+	$(uC).css('background-color', color);
+}
+
+function cleanLine(winNum) {
+	var uGold = '#elem' + winNum;
+	$('uGold').css('animation', 'fadeIn 6s');
+	$('.newElem').css('animation', 'fadeOut 6s');
+	setTimeout(function() {
+		$('.newElem').css('background-color', 'rgba(255,255,255, 0.7)');
+	}, 6000);
+	setTimeout(function() {
+		$('.newElem').css('animation', '');
+	}, 6660);
+}
+
 function doVerifyNum(userNum) {
 
 	if (userNum == 0) {
 		document.getElementById('result').innerHTML = 'Новое число загаданно!';
 	} else if (userNum == pcNum) {
 		costValue = '=';
+		cleanLine(userNum);
 		userWin();
 	} else if (pcNum < userNum) {
+		paintLine(userNum, '#3e9dfd');
 		writeLog('<', '#3e9dfd');
 	} else if (pcNum > userNum) {
+		paintLine(userNum, '#f24747');
 		writeLog('>', '#f24747');				
 	}
 }

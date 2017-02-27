@@ -11,8 +11,8 @@ body {
 	user-select: none;
 	line-height: 1;
 	color: white;
-	background: #7bbd75;
-	background-image: url('img/background.gif');
+	background: #BDDEBA;
+	/*background-image: url('img/background.jpg');*/
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: top center;
@@ -34,7 +34,7 @@ a {
 }
 
 
-.body {
+.wrapper {
 	margin-top: 20px;
 	width: 968px;
 	margin: auto;
@@ -95,7 +95,38 @@ input {
 }
 
 #totalExp {
+	height: 36px;
 	color: #E2ECF2;
+}
+
+@keyframes fadeOut {
+	to {background-color: rgba(255,255,255, 0.7);}
+}
+
+@keyframes fadeIn {
+	to {background-color: rgba(254,246,91, 0.7);}
+}
+
+#createElems {
+	height: 18px;
+}
+
+#createElems .newElem{
+	vertical-align: top;
+	height: 16px;
+	width: 8px;
+	display: inline-block;
+	background-color: rgba(255,255,255, 0.7);
+}
+
+#createElems .newElem:hover::before {
+	content: attr(data-title);
+	font-size: 16px;
+	color: #000;
+	z-index: 666;
+	position: relative;
+	left: 15px;
+	top: -25px;
 }
 
 .console {
