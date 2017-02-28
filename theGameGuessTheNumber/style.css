@@ -11,14 +11,14 @@ body {
 	user-select: none;
 	line-height: 1;
 	color: white;
-	background: #BDDEBA;
+	background: #D6E8E6;/*#BDDEBA; ------ light green*/
 	/*background-image: url('img/background.jpg');*/
 /*	-webkit-background-size: cover;
-	background-size: cover;*/
+background-size: cover;*/
 /*	background-position: top center;*/
-	font-family: 'Roboto Slab', serif;
-	font-weight: bold;
-	letter-spacing: 2px;
+font-family: 'Roboto Slab', serif;
+font-weight: bold;
+letter-spacing: 2px;
 }
 
 a {
@@ -33,7 +33,6 @@ a {
 	/*height: 100px;*/
 }
 
-
 .wrapper {
 	margin-top: 20px;
 	width: 968px;
@@ -41,28 +40,90 @@ a {
 	text-align:  center;
 	font-size: 36px;
 	text-shadow: 2px 2px 5px black;
-	background-color: #7bbd75;
 	opacity: 0.91;
 }
 
+#nav-menu {
+	height: 25px;
+	background-color: #83B7B1;
+	width: 100%;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #628884;
+	box-shadow: 0 2px 12px #555;
+}
+
+#list {
+	width: 968px;
+	margin: auto;
+}
+
+.menu-item {
+	display: inline-block;
+	text-align: center;
+}
+
+.menu-item:hover {
+	background-color: #628884;
+}
+
+
+.menu-item > a {
+	color: #FFF;
+	vertical-align: center;
+	line-height: 25px;
+	width: 111px;
+}
+
+#gameField {
+	width: 100%;
+	box-shadow: 0 0 15px #777;
+	background-color: #EBFFFD;
+}
+
 .inst {
-	margin: 10px 0;
+	padding: 10px 0;
 	font-size: 42px;
+	color: #FFF;
+	background-color: #628884;
+}
+
+#head {
+	height: 25px;
+	background-color: #628884;
 }
 
 h1.rules {
-	padding-top: 5px;
-	color: rgb(242, 71, 71);
+	vertical-align: middle;
+	padding-bottom: 25px;
+	color: #F27A7A;
 	font-size: 20px;
-	height: 25px;
-	background-color: #3e9dfd;
+	display: inline-block;
+	z-index: 666;
+	cursor: pointer;
+}
+
+.dispButtons {
+	margin-bottom: 20px;
+	width: 80px;
+	height: 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.hiddenButtons {
+	display: none;
 }
 
 p.rules {
-	color: #ccc;
+	color: #EEE;
 	font-size: 14px;
-	padding: 10px 60px;
-	background-color: #3e9dfd;
+	padding: 10px 38px;
+	background-color: #628884;
+	box-shadow: 0 2px 3px #999;
+}
+
+#popup {
+	display: none;
 }
 
 span.lessThan {
@@ -73,7 +134,7 @@ span.lessThan {
 
 span.moreThan {
 	font-size: 16px;
-	color: rgb(242, 71, 71);
+	color: #F27A7A;
 }
 
 #userNumber {
@@ -82,12 +143,45 @@ span.moreThan {
 	height: 38px;
 	font-size: 36px;
 	border-radius: 8px;
+	background-color: #FFF;
+}
+
+@keyframes transText {
+	0% {color: #000;}
+	80% {color: transparent;}
+	100% {color: #000;}
+}
+
+#cleanButton:hover{
+	animation: transText 3s 1;
 }
 
 .buttons {
 	width: 96px;
 	height: 42px;
+	background-color: #6FA29C;
+	border: 2px solid #6FA29C;
 	border-radius: 8px;
+	box-shadow: 1px 1px 1px #000;
+	color: #FFF;
+	font-family: verdana, sans-serif;
+}
+
+.buttons:hover {
+	color: #000;
+	box-shadow: 2px 2px 3px #000;
+	background-color: #87D5CC;
+	border: 2px solid #87D5CC;
+	cursor: pointer;
+}
+
+.buttons:active {
+	border-left: 4px solid #618D88;
+	border-top: 4px solid #618D88;
+	border-bottom: 0 solid #6FA29C;
+	border-right: 0 solid #6FA29C;
+	box-shadow: 1px 1px 4px #333;
+	background-color: #618D88;
 }
 
 input {
@@ -96,7 +190,7 @@ input {
 
 #totalExp {
 	height: 36px;
-	color: #E2ECF2;
+	color: #3F9EFD;
 }
 
 @keyframes fadeOut {
@@ -107,38 +201,86 @@ input {
 	0% {background-color: rgba(255,255,255, 0.7);}
 	20% {background-color: rgba(255,242,0, 0.8);}
 	80% {background-color: rgba(255,242,0, 0.6);}
-	100% {background-color: rgba(255,255,255, 0.7);}
+	100% {background-color: rgba(255,255,255, 0.5);}
 }
 
 #createElems {
 	height: 28px;
+	margin: 10px auto;
+	width: 891px;
+	border: 1px solid #000;
+	background: linear-gradient(to right, #3F9EFD , #F73333);
+	animation: shineBorder 3s infinite ease-in-out;
 }
 
 #createElems > div {
 	vertical-align: top;
-	height: 26px;
+	height: 28px;
 	width: 9px;
 	display: inline-block;
-	background-color: rgba(255,255,255, 0.7);
+	background-color: rgba(255,255,255, 0.5);
+}
+
+@keyframes slowFade {
+	0% {background-color: rgba(255,255,255, 0.5);}
+/*	5% {background-color: rgba(255,255,255, 0.6);}
+	10% {background-color: rgba(255,255,255, 0.7);}
+	15% {background-color: rgba(255,255,255, 0.8);}*/
+	20% {background-color: rgba(255,255,255, 0.9);}
+/*	25% {background-color: rgba(255,255,255, 0.8);}
+	30% {background-color: rgba(255,255,255, 0.7);}
+	35% {background-color: rgba(255,255,255, 0.6);}
+	*/42% {background-color: transparent;}/*
+	40% {background-color: rgba(255,255,255, 0.5);}
+	45% {background-color: rgba(255,255,255, 0.4);}
+	50% {background-color: rgba(255,255,255, 0.3);}
+	55% {background-color: rgba(255,255,255, 0.2);}
+	60% {background-color: rgba(255,255,255, 0.1);}
+	70% {background-color: rgba(255,255,255, 0.1);}
+	75% {background-color: rgba(255,255,255, 0.2);}
+*/	80% {background-color: rgba(42,150,42, 0.9);}/*
+	85% {background-color: rgba(255,255,255, 0.35);}
+	90% {background-color: rgba(255,255,255, 0.4);}
+	95% {background-color: rgba(255,255,255, 0.45);}*/
+	100% {background-color: rgba(255,255,255, 0.5);}
+}
+
+@keyframes shineBorder {
+	0% {box-shadow: 0 0 15px #000;}
+	50% {box-shadow: 0 0 15px #fff;}
+	100% {box-shadow: 0 0 15px #000;}
+}
+
+.animDiv {
+	-webkit-animation: slowFade 3s ease-in-out;
+	-o-animation: slowFade 3s ease-in-out;
+	animation: slowFade 3s ease-in-out;
+	animation-iteration-count: 1;
+
+}
+
+#createElems:hover {
+	cursor: pointer;	
 }
 
 #createElems > div:hover {
 	vertical-align: top;
-	height: 22px;
+	height: 24px;
 	width: 5px;
 	display: inline-block;
-	background-color: rgba(255,255,150, 0.7);
-	border: 2px solid red;
+	background-color: transparent; /*rgba(255,255,150, 0.7);*/
+	border: 2px solid #FF4242;
+	box-shadow: 0 0 7px #FF4242;
 }
 
 #createElems .newElem:hover::before {
 	content: attr(data-title);
-	font-size: 16px;
-	color: #000;
+	font-size: 18px;
+	color: #222;
 	z-index: 666;
 	position: relative;
 	left: 15px;
-	top: -25px;
+	top: -42px;
 }
 
 .console {
@@ -146,7 +288,7 @@ input {
 	background-color: black;
 	min-height: inherit;
 	text-align: left;
-	font-size: 20px;
+	font-size: 16px;
 	opacity: 0.7;
 }
 
@@ -167,12 +309,12 @@ input {
 }
 
 #version {
-	color: #afd7ac;
+	color: #CDFFF9;
 	position: fixed;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: #7bbd75;
+	background-color: #83B7B1;
 	opacity: 0.7;
 	text-align: center;
 	width: 100%;
@@ -203,7 +345,7 @@ input {
 	}
 
 	.spacex2 {
-/*		height: 330px;*/
+		/*		height: 330px;*/
 	}
 
 	h1.rules {

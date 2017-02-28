@@ -7,36 +7,54 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
+	<div id="nav-menu">
+		<div id="logo"></div>
+		<div id="menu">
+			<div id="list">
+				<div class="menu-item"><a href="#">Home Page</a></div>
+				<div class="menu-item"><a href="#">More Game</a></div>
+				<div class="menu-item"><a href="#">Contacts</a></div>
+			</div>
+		</div>
+	</div>
 	<div class="wrapper">
-		<fieldset>
-			<div id="header">
-				<h1 class="inst">Угадай число!<br><span id="respDesigh">от 1 до 99.</span></h1>
-				<div class="spacex2">
-					<h1 class="rules" onClick="closeOpenPopup()">Правила игры: ^</h1></a>
-					<p class="rules" id="popup">&nbsp;Твой <span id="comp">компьютер</span><span id="phone">телефон</span> уже загадал число, тебе нужно его отгадать.	Впиши в поле число от 1 до 99 и нажми "Проверить!". Компьютер сверит их, и подскажет <span class="moreThan">"больше"</span> оно или <span class="lessThan">"меньше"</span> загаданного. Чем быстрее отгадаешь, тем больше опыта получишь. <span class="moreThan">Удачи!</span></p>
+		<div id="gameField">
+			<fieldset>
+				<div id="header">
+					<h1 class="inst">Угадай число!<br><span id="respDesigh">от 1 до 99.</span></h1>
+					<div class="spacex2">
+						<div id="head">
+							<h1 class="rules" onclick="closeOpenPopup()">Правила игры: </h1>
+							<input class="dispButtons" id="open" type="submit" name="openPopup" onclick="closeOpenPopup()" value="Показать.."></input>
+							<input class="hiddenButtons" id="close" type="submit" name="closePopup" onclick="closeOpenPopup()" value="Скрыть.."></input>
+						</div>
+						<div id="popup" class="rules">
+						<p class="rules">&nbsp;Твой <span id="comp">компьютер</span><span id="phone">телефон</span> уже загадал число, тебе нужно его отгадать.	Впиши в поле число от 1 до 99 и нажми "Проверить!". Или просто выбери на полосе ниже. Компьютер сверит их, и подскажет <span class="moreThan">"больше"</span> оно или <span class="lessThan">"меньше"</span> загаданного. Чем быстрее отгадаешь, тем больше опыта получишь. <span class="moreThan">Удачи!</span></p>
+						</div>
+					</div>
+					<div class="spaceStars">
+						<div id="stars"></div>
+					</div>
+					<input class="buttons" type="reset" value="Очистить" onClick="resetGame()" id="cleanButton">
+					<input type="number" id="userNumber" name="numberField" min="1" max="99" size="1" maxlength="2" autofocus>
+					<input class="buttons" type="submit" value="Проверить!" onClick="getUserNumber()">
+					<div class="space">
+						<p id="totalExp"> </p>
+					</div>
 				</div>
-				<div class="spaceStars">
-					<div id="stars"></div>
-				</div>
-				<input class="buttons" type="reset" value="Очистить" onClick="resetGame()">
-				<input type="number" id="userNumber" name="numberField" min="1" max="99" size="1" maxlength="2" autofocus>
-				<input class="buttons" type="submit" value="Проверить!" onClick="getUserNumber()">
-				<div class="space">
-					<p id="totalExp"> </p>
-				</div>
-			</div>
 				<div id="createElems"></div>
-			<div class="console">
-				<div id="progress"></div>
-				<div id="history"></div>
-				<div id="result"></div>
-				<div id="wins">Число загадано!</div>
-			</div>
-		</fieldset>
+				<div class="console">
+					<div id="progress"></div>
+					<div id="history"></div>
+					<div id="result"></div>
+					<div id="wins">Число загадано!</div>
+				</div>
+			</fieldset>
+		</div>
 	</div>
 	<footer>
 		<div id="version">
-			<p>version 0.0.9 alpha</p>
+			<p>version 0.1.0 beta</p>
 		</div>
 	</footer>
 	<script type="text/javascript" src="scripts/jquery.min.js"></script>

@@ -4,10 +4,17 @@ function createDiv() {
 	var $newElems, counter = 1;
 
 	while (counter < 100) {
-		$newElems = $('<div id="elem' + counter + '" class="newElem" data-title="' + counter + '" value="' + counter + '"></div>');
+		$newElems = $('<div id="elem' + counter + '" class="newElem" data-title="' + counter + '"></div>');
 		$('#createElems').append($newElems);
 		counter++;
 	}
+	setInterval(animDivs, 42, itemCounter);
+}
+
+function animDivs() {
+	var itemIds = '#elem' + itemCounter;
+	$(itemIds).addClass('animDiv');
+	return itemCounter++;
 }
 
 var userNumber = $("#userNumber");
@@ -19,7 +26,7 @@ userNumber.bind("keydown", function (e) {
 
 
 $('.newElem').click(function () {
-	userNum = $(this).attr("value");
+	userNum = $(this).attr("data-title");
 	$('#userNumber').val(userNum);
 	doVerifyNum(userNum);
 });
@@ -34,29 +41,28 @@ function getUserNumber() {
 	} else {
 		doVerifyNum(userNum);
 	}
-	//countInfoMsg();
 }
 
-// function countInfoMsg() {
-// 	var infoMsgLen = $("#progress").children().length;
-// 	var resDiv = $("#progress").find(".resultPara");
+function countInfoMsg() {
+	var //infoMsgLen = $("#progress").find().length,
+		resDiv = $("#progress").find(".resultPara"),
+		viewportHeight =  $(window).height(),
+		headerHeight = $("#header").outerHeight(),
+		footerHeight = $("#version").outerHeight(),
+		itemsHeight = 0,
+		menuHeight = 110,
+		consoleHeight =  /*viewportHeight - headerHeight - footerHeight - menuHeight;*/ $(".console").innerHeight(); //.get(0)
+	console.log(consoleHeight);
+	$("#progress").find().each(function(item){
+		itemsHeight += $(item).outerHeight();
+	});
 
-// 	var viewportHeight =  window.clientHeight;//$('html').innerHeight();
-// 	var headerHeight = $("#header").outerHeight();
-// 	var footerHeight = $("#version").outerHeight();
-// 	var itemsHeight = 0;
-// 	var consoleHeight =  /* viewportHeight - headerHeight - footerHeight;*/ $(".console").outerHeight(); //.get(0)
-// 	console.log(consoleHeight);
-// 	$("#progress").children().each(function(item){
-// 		itemsHeight += $(item).outerHeight();
-// 	});
+	//consoleHeight;
 
-// 	consoleHeight;
-
-// 	if (consoleHeight >= (viewportHeight - (headerHeight + footerHeight))) {
-// 		$.remove(resDiv.get(0));
-// 	}
-// }
+	if (consoleHeight >= (viewportHeight - (headerHeight + footerHeight + menuHeight))) {
+		$("#progress").find(resDiv).eq(0).remove(); //resDiv.get(0)
+	}
+}
 
 function userWin() {
 	tryCountCalc();
@@ -71,13 +77,13 @@ function userWin() {
 	//$('#progress p:last-child').detach();
 	var $textHis= 'Загаданное число ' + userNum + ' - угадано за ' + tryCount + ' ' + tryCountItem + ' Получено ' + expPoint + 'XP.';
 	var $paraHis = $('<p>', {
-		"class": 'resultPara',
+		"class": 'winResultPara',
 		text: $textHis
 	});
 
-	$('#progress').append($textHis);
+	$('#progress').append($paraHis);
 	$('#result').css('color', '#31d023');
-	var totalExp = expTotalPoints + ' XP';
+	var totalExp = '<p>' + expTotalPoints + ' XP</p>';
 	$('#totalExp').html(totalExp);
 	counter();
 	pcNum = AiIsGenerating();
@@ -118,22 +124,23 @@ function paintLine(userNum, color) {
 function cleanLine(userNum) {
 	var uGold = '#elem' + userNum;
 	$(uGold).removeClass('newElem');
-	$(uGold).css('animation', 'fadeIn 6s');
-	$('.newElem').css('animation', 'fadeOut 6s');
+	$(uGold).css('animation', 'fadeIn 3s');
+	$('.newElem').css('animation', 'fadeOut 1s');
 	setTimeout(function() {
-		$('.newElem').css('background-color', 'rgba(255,255,255, 0.7)');
-	}, 6000);
+		$('.newElem').css('background-color', 'rgba(255,255,255, 0.5)');
+	}, 1000);
 	setTimeout(function() {
 		$(uGold).addClass('newElem');
 		$('.newElem').css('background-color', '');
 		$('.newElem').css('animation', '');
-	}, 6000);
+	}, 1000);
 }
 
 function doVerifyNum(userNum) {
+	countInfoMsg();
 
 	if (userNum == 0) {
-		document.getElementById('result').innerHTML = 'Новое число загаданно!';
+		$('#result').html('Новое число загаданно!');
 	} else if (userNum == pcNum) {
 		cleanLine(userNum);
 		costValue = '=';
@@ -153,12 +160,12 @@ function counter() {
 	switch (count) {
 		case 2: 
 		case 3: 
-		case 4: document.getElementById('wins').innerHTML = 'Число угадано: ' + count + ' разa.'; break;
+		case 4: $('#wins').html('Число угадано: ' + count + ' разa.'); break;
 		case 10: {
 			resetGame();
-			document.getElementById('wins').innerHTML = 'Поздравляем, Вы угадали 10 раз. Общее число опыта: ' + expTotalPoints + '. Открыто достижение: Интуит\!';
+			$('#wins').html('Поздравляем, Вы угадали 10 раз. Общее число опыта: ' + expTotalPoints + '.\!');
 		} break;
-		default: document.getElementById('wins').innerHTML = 'Число угадано: ' + count + ' раз.';
+		default: $('#wins').html('Число угадано: ' + count + ' раз.');
 	}
 }
 
@@ -169,13 +176,15 @@ function tryCounter() {
 
 function resetGame() {
 	pcNum = AiIsGenerating();
-	doVerifyNum();
+	doVerifyNum(0);
 	cleanLine();
-	$('#userNumber').value = '';
-	$('#progress').innerHTML = '';
-	$('#history').innerHTML = '';
-	$('#result').innerHTML = '';
-	$('#wins').innerHTML = 'Число загадано!';
+	$('#stars img').remove();
+	$('#userNumber').val('');
+	$('#totalExp p').remove();
+	$('#progress').html('');
+	$('#history').html('');
+	$('#result').html('');
+	$('#wins').html('Число загадано!');
 }
 
 function expCount() {
@@ -194,22 +203,18 @@ function totalExpPoints() {
 }
 
 function createStars(value) {
-	var winStar = document.createElement("IMG");
-
+var $winStar;
 	if (value == true) {
-		winStar.setAttribute('src', 'img/goldStar.ico');
+		$winStar = '<img id="goldStar" src="img/goldStar.ico" width="66px" alt="Star of victory!" />';
 	} else {
-		winStar.setAttribute('src', 'img/star.png');
+		$winStar = '<img id="star" src="img/star.png" width="66px" alt="Star of victory!" />';
 	}
-
-	winStar.setAttribute('width', '66');
-	winStar.setAttribute('alt', 'Star of victory!');
-	document.getElementById('stars').appendChild(winStar);
+	$('#stars').append($winStar);
 }
 
-var pcNum = AiIsGenerating(), count = 0, userNum, costValue;
+var pcNum = AiIsGenerating(), count = 0, userNum, costValue, itemCounter = 1;
 var tryCount = 1, tryCountItem, expPoint, expTotalPoints = 0;
-var popupCondition = true;
+var popupCondition = false;
 
 function tryCountCalc() {
 	switch(tryCount) {
@@ -235,10 +240,24 @@ function AiIsGenerating() {
 function closeOpenPopup() {
 	if (popupCondition == true) {
 		popupCondition = false;
-		document.getElementById('popup').style.display='none';
+		$('#popup').css('display', 'none');
+
+		$('#close').addClass('hiddenButtons');
+		$('#close').removeClass('dispButtons');
+
+		$('#open').addClass('dispButtons');
+		$('#open').removeClass('hiddenButtons');
+
 	} else {
-		document.getElementById('popup').style.display='inline-block';
 		popupCondition = true;
+		$('#popup').css('display', 'inline-block');
+
+		$('#open').addClass('hiddenButtons');
+		$('#open').removeClass('dispButtons');
+
+		$('#close').addClass('dispButtons');
+		$('#close').removeClass('hiddenButtons');
+		
 	}
 
 }
