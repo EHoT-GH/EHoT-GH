@@ -205,9 +205,9 @@ function totalExpPoints() {
 function createStars(value) {
 var $winStar;
 	if (value == true) {
-		$winStar = '<img class="stars" id="goldStar" src="img/goldStar.ico" width="66px" data-title="' + userNum + '" />';
+		$winStar = '<div class="stars" data-title="' + userNum + '"><img id="goldStar" src="img/goldStar.ico" width="66px" /></div>';
 	} else {
-		$winStar = '<img class="stars" id="star" src="img/star.png" width="66px" data-title="' + userNum + '" />'; //alt="Star of victory!"
+		$winStar = '<div class="stars" data-title="' + userNum + '"><img class="stars" id="star" src="img/star.png" width="66px" /></div>'; //alt="Star of victory!"
 	}
 	$('#stars').append($winStar);
 }
