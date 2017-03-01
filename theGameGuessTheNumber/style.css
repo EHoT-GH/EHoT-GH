@@ -30,6 +30,7 @@ a {
 }
 
 .wrapper {
+	padding-top: 1%;
 	margin-top: 20px;
 	width: 98%;
 	margin: auto;
