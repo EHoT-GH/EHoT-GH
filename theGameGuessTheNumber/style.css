@@ -31,7 +31,7 @@ a {
 
 .wrapper {
 	margin-top: 20px;
-	width: 968px;
+	width: 98%;
 	margin: auto;
 	text-align:  center;
 	font-size: 36px;
@@ -224,24 +224,6 @@ input {
 	100% {background-color: rgba(255,255,255, 0.5);}
 }
 
-#createElems {
-	height: 36px;
-	margin: 10px auto;
-	width: 891px;
-	border: 1px solid #000;
-	border-radius: 4px;
-	background: linear-gradient(to right, #3F9EFD , #F73333);
-	animation: shineBorder 3s infinite ease-in-out;
-}
-
-#createElems > div {
-	vertical-align: top;
-	height: 36px;
-	width: 9px;
-	display: inline-block;
-	background-color: rgba(255,255,255, 0.5);
-}
-
 @keyframes slowFade {
 	0% {background-color: rgba(255,255,255, 0.5);}
 	20% {background-color: rgba(255,255,255, 0.9);}
@@ -261,8 +243,26 @@ input {
 	-o-animation: slowFade 3s ease-in-out;
 	animation: slowFade 3s ease-in-out;
 	animation-iteration-count: 1;
-
 }
+
+#createElems {
+	height: 42px;
+	margin: 10px auto;
+	width: 99%;
+	border: 1px solid #000;
+	border-radius: 4px;
+	background: linear-gradient(to right, #3F9EFD , #F73333);
+	animation: shineBorder 3s infinite ease-in-out;
+}
+
+#createElems > div {
+	vertical-align: top;
+	height: 42px;
+	width: 1.01%;
+	display: inline-block;
+	background-color: rgba(255,255,255, 0.5);
+}
+
 
 #createElems:hover {
 	cursor: pointer;	
@@ -270,8 +270,8 @@ input {
 
 #createElems > div:hover {
 	vertical-align: top;
-	height: 32px;
-	width: 5px;
+	height: 38px;
+	width: calc(1.01% - 4px);
 	display: inline-block;
 	background-color: transparent;
 	border: 2px solid #FF4242;
