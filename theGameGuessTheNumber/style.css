@@ -12,13 +12,9 @@ body {
 	line-height: 1;
 	color: white;
 	background: #D6E8E6;/*#BDDEBA; ------ light green*/
-	/*background-image: url('img/background.jpg');*/
-/*	-webkit-background-size: cover;
-background-size: cover;*/
-/*	background-position: top center;*/
-font-family: 'Roboto Slab', serif;
-font-weight: bold;
-letter-spacing: 2px;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	letter-spacing: 2px;
 }
 
 a {
@@ -65,7 +61,6 @@ a {
 .menu-item:hover {
 	background-color: #628884;
 }
-
 
 .menu-item > a {
 	color: #FFF;
@@ -234,6 +229,7 @@ input {
 	margin: 10px auto;
 	width: 891px;
 	border: 1px solid #000;
+	border-radius: 4px;
 	background: linear-gradient(to right, #3F9EFD , #F73333);
 	animation: shineBorder 3s infinite ease-in-out;
 }
@@ -248,25 +244,9 @@ input {
 
 @keyframes slowFade {
 	0% {background-color: rgba(255,255,255, 0.5);}
-/*	5% {background-color: rgba(255,255,255, 0.6);}
-	10% {background-color: rgba(255,255,255, 0.7);}
-	15% {background-color: rgba(255,255,255, 0.8);}*/
 	20% {background-color: rgba(255,255,255, 0.9);}
-/*	25% {background-color: rgba(255,255,255, 0.8);}
-	30% {background-color: rgba(255,255,255, 0.7);}
-	35% {background-color: rgba(255,255,255, 0.6);}
-	*/42% {background-color: transparent;}/*
-	40% {background-color: rgba(255,255,255, 0.5);}
-	45% {background-color: rgba(255,255,255, 0.4);}
-	50% {background-color: rgba(255,255,255, 0.3);}
-	55% {background-color: rgba(255,255,255, 0.2);}
-	60% {background-color: rgba(255,255,255, 0.1);}
-	70% {background-color: rgba(255,255,255, 0.1);}
-	75% {background-color: rgba(255,255,255, 0.2);}
-*/	80% {background-color: rgba(42,150,42, 0.9);}/*
-	85% {background-color: rgba(255,255,255, 0.35);}
-	90% {background-color: rgba(255,255,255, 0.4);}
-	95% {background-color: rgba(255,255,255, 0.45);}*/
+	42% {background-color: transparent;}
+	80% {background-color: rgba(42,150,42, 0.9);}
 	100% {background-color: rgba(255,255,255, 0.5);}
 }
 
@@ -293,7 +273,7 @@ input {
 	height: 32px;
 	width: 5px;
 	display: inline-block;
-	background-color: transparent; /*rgba(255,255,150, 0.7);*/
+	background-color: transparent;
 	border: 2px solid #FF4242;
 	box-shadow: 0 0 7px #FF4242;
 }
@@ -368,12 +348,8 @@ input {
 	color: gold;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
-	#version {
-		opacity: 1;
-		padding: 5px;
-	}
-	.body {
+@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 992px) {
+	.wrapper {
 		margin-top: 0;
 		width: 95%;
 		font-size: 42px;
@@ -383,8 +359,8 @@ input {
 	}
 
 	.inst {
-		margin: 5px 0;
-		font-size: 66px;
+		margin: 0;
+		font-size: 60px;
 	}
 
 	.spaceStars {
@@ -393,30 +369,41 @@ input {
 	}
 
 	.spacex2 {
-		/*		height: 330px;*/
+		/*height: 330px;*/
+	}
+
+	#head {
+		height: 36px;
 	}
 
 	h1.rules {
-		font-size: 42px;
+		font-size: 30px;
 		height: 50px;
-		background-color: #191F30;
+		border: 0;
+	}
+
+	input.dispButtons {
+		vertical-align: top;
+		margin-top: 3px;
+		height: 30px;
+		width: 101px;
+		font-size: 20px;
 	}
 
 	p.rules {
 		color: #eee;
 		text-align: justify;
 		padding: 10px 15px;
-		font-size: 40px;
+		font-size: 24px;
 		text-shadow: none;
-		background-color: #191F30;
 	}
 
 	span.lessThan {
-		font-size: 40px;
+		font-size: 24px;
 	}
 
 	span.moreThan {
-		font-size: 40px;
+		font-size: 24px;
 		text-shadow: 2px 2px 8px #000;
 	}
 
@@ -428,6 +415,19 @@ input {
 		border-radius: 16px;
 	}
 
+	#createElems {
+		height: 50px;
+	}
+
+	#createElems > div {
+		height: 50px;
+	}
+
+	#createElems > div:hover {
+		height: 46px;
+		width: 5px;
+	}
+
 	.buttons {
 		width: 33%;
 		height: 84px;
@@ -437,13 +437,13 @@ input {
 
 	.console {
 		padding-left: 20px;
-		font-size: 36px;
+		padding-bottom: 0;
+		font-size: 16px;
 		opacity: 0.8;
-		padding-bottom: 26px;
 	}
 
 	#wins {
-		font-size: 42px;
+		font-size: 24px;
 	}
 
 	#stars {
@@ -461,4 +461,138 @@ input {
 	#comp {
 		display: none;
 	}
+
+	#version {
+		opacity: 1;
+		padding: 5px;
+		height: 30px;
+		font-size: 30px;
+	}
+}
+
+@media only screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1200px) {
+	#nav-menu {
+		display: none;
+	}
+
+	.wrapper {
+		margin-top: 0;
+		width: 99%;
+		font-size: 42px;
+		opacity: 0.9;
+		font-weight: normal;
+		letter-spacing: 2px;
+	}
+
+	.inst {
+		margin: 0;
+		font-size: 60px;
+	}
+
+	.spaceStars {
+		padding: 3px 0;
+		min-height: 69px;
+	}
+
+	.spacex2 {
+		/*height: 330px;*/
+	}
+
+	#head {
+		height: 36px;
+	}
+
+	h1.rules {
+		font-size: 30px;
+		height: 50px;
+		border: 0;
+	}
+
+	input.dispButtons {
+		vertical-align: top;
+		margin-top: 3px;
+		height: 30px;
+		width: 101px;
+		font-size: 20px;
+	}
+
+	p.rules {
+		color: #eee;
+		text-align: justify;
+		padding: 10px 15px;
+		font-size: 24px;
+		text-shadow: none;
+	}
+
+	span.lessThan {
+		font-size: 24px;
+	}
+
+	span.moreThan {
+		font-size: 24px;
+		text-shadow: 2px 2px 8px #000;
+	}
+
+	#userNumber {
+		width: 75px;
+		height: 42px;
+		text-align: center;
+		font-size: 42px;
+		border-radius: 16px;
+	}
+
+
+	.buttons {
+		width: 22%;
+		height: 42px;
+		font-size: 24px;
+		border-radius: 8px;
+	}
+
+	#createElems {
+		height: 50px;
+	}
+
+	#createElems > div {
+		height: 50px;
+	}
+
+	#createElems > div:hover {
+		height: 46px;
+		width: 5px;
+	}
+
+	.console {
+		padding-left: 20px;
+		font-size: 16px;
+		opacity: 0.8;
+	}
+
+	#wins {
+		font-size: 24px;
+	}
+
+	#stars {
+		min-height: 69px;
+	}
+
+	#respDesigh {
+		display: none;
+	}
+
+	#phone {
+		display: inline-block;
+	}
+
+	#comp {
+		display: none;
+	}
+
+	#version {
+		opacity: 1;
+		padding: 5px;
+		height: 30px;
+		font-size: 30px;
+	}
+}
 }

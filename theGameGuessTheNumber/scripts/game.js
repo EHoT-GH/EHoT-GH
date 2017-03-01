@@ -178,6 +178,7 @@ function resetGame() {
 	pcNum = AiIsGenerating();
 	doVerifyNum(0);
 	cleanLine();
+	expTotalPoints = 0;
 	$('#stars img').remove();
 	$('#userNumber').val('');
 	$('#totalExp p').remove();
