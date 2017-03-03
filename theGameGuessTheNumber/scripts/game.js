@@ -24,7 +24,6 @@ userNumber.bind("keydown", function (e) {
   }
 });
 
-
 $('.newElem').click(function () {
   userNum = $(this).attr("data-title");
   $('#userNumber').val(userNum);
