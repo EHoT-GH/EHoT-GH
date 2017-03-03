@@ -45,17 +45,17 @@ function getUserNumber() {
 
 function countInfoMsg() {
 	var //infoMsgLen = $("#progress").find().length,
-		resDiv = $("#progress").find(".resultPara"),
-		viewportHeight =  $(window).height(),
-		headerHeight = $("#header").outerHeight(),
-		footerHeight = $("#version").outerHeight(),
-		itemsHeight = 0,
-		menuHeight = 110,
+	resDiv = $("#progress").find(".resultPara"),
+	viewportHeight =  $(window).height(),
+	headerHeight = $("#header").outerHeight(),
+	footerHeight = $("#version").outerHeight(),
+	itemsHeight = 0,
+	menuHeight = 110,
 		consoleHeight =  /*viewportHeight - headerHeight - footerHeight - menuHeight;*/ $(".console").innerHeight(); //.get(0)
-	console.log(consoleHeight);
-	$("#progress").find().each(function(item){
-		itemsHeight += $(item).outerHeight();
-	});
+		console.log(consoleHeight);
+		$("#progress").find().each(function(item){
+			itemsHeight += $(item).outerHeight();
+		});
 
 	//consoleHeight;
 
@@ -162,8 +162,8 @@ function counter() {
 		case 3: 
 		case 4: $('#wins').html('Число угадано: ' + count + ' разa.'); break;
 		case 10: {
-			resetGame();
-			$('#wins').html('Поздравляем, Вы угадали 10 раз. Общее число опыта: ' + expTotalPoints + '.\!');
+			endGame();
+			$('#wins').html('Поздравляем, Вы угадали 10 раз. Общее число опыта: ' + expTotalPoints + ' XP из 100 возможных\!');
 		} break;
 		default: $('#wins').html('Число угадано: ' + count + ' раз.');
 	}
@@ -179,13 +179,27 @@ function resetGame() {
 	doVerifyNum(0);
 	cleanLine();
 	expTotalPoints = 0;
+	$('#startButton').show();
+	$('#userNumber').show();
 	$('#stars img').remove();
 	$('#userNumber').val('');
 	$('#totalExp p').remove();
 	$('#progress').html('');
 	$('#history').html('');
 	$('#result').html('');
-	$('#wins').html('Число загадано!');
+	$('#wins').text('Число загадано!');
+}
+
+function endGame() {
+	pcNum = AiIsGenerating();
+	doVerifyNum(0);
+	cleanLine();
+	$('#userNumber').val('');
+	$('#progress').html('');
+	$('#history').html('');
+	$('#result').html('');
+	$('#startButton').hide();
+	$('#userNumber').hide();
 }
 
 function expCount() {
@@ -204,7 +218,7 @@ function totalExpPoints() {
 }
 
 function createStars(value) {
-var $winStar;
+	var $winStar;
 	if (value == true) {
 		$winStar = '<div class="stars" data-title="' + userNum + '"><img id="goldStar" src="img/goldStar.ico" width="66px" /></div>';
 	} else {
@@ -242,7 +256,7 @@ function closeOpenPopup() {
 	if (popupCondition == true) {
 		popupCondition = false;
 		$('#popup').css('display', 'none');
-
+		
 		$('#close').addClass('hiddenButtons');
 		$('#close').removeClass('dispButtons');
 
