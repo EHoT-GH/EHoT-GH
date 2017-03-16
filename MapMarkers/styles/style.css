@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:300,300i,400,700');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(to bottom, #D3D3CD, #DFDCAC);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+}
+
+#wrapper {
+	padding-top: 10px;
+	margin: auto;
+	font-family: 'Exo 2', sans-serif;
+}
+
+/* MAIN CONTENT SETTINGS */
+
+.content {
+	background-color: #FFF;
+	display: inline-block;
+	-webkit-box-shadow: 0 0 12px #666;
+	box-shadow: 0 5px 5px #666;
+	margin-right: 6px;
+	vertical-align: top;
+}
+
+.nav-tree {
+	margin-left: calc(50% - 282px - 20px - 334px);
+	width: 333px;
+	padding-bottom: 10px;
+}
+
+/* map */
+
+.map-wrapp {
+	width: 564px;
+	min-height: 888px;
+	position: relative;
+}
+
+#map {
+	position: fixed;
+	margin: 0;
+	width: 564px;
+	height: 864px;
+	color: #CCC;
+	background: #FFF;
+	user-drag: none;
+}
+
+.markersWrapp {
+	width: 333px;
+}
+
+.name {
+	font-size: 16px;
+	color: #CCC;
+}
+
+.count {
+	width: 28px;
+	font-size: 14px;
+	border: 1px solid #666;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #AAA;
+}
+
+.header {
+	height: 25px;
+	padding-left: 10px;
+	background-color: #444;
+	color: #FFF;
+	text-shadow: 1px 1px 4px #000;
+}
+
+.header:hover {
+	background-color: #000;
+	box-shadow: 0 0 3px #444;
+	color: #FFF;
+	cursor: default;
+}
+
+/**/
+
+.markers {
+	margin: 10px;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #EEE;
+	border-radius: 5px;
+	box-shadow: 0 1px 1px #666;
+	font-weight: 300;
+	font-style: italic;
+	position: relative;
+	background: linear-gradient(to top, #F5F5F5, #EEEEEE);
+}
+
+p.popup span{
+	color: #FF5555;
+	font-weight: 400;
+	font-style: normal; 
+}
+
+p.popup {
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300;
+	font-style: italic; 
+}
+
+p.popup b{
+	color: #FF5555;
+	font-weight: 900;
+	font-style: normal; 
+}
+
+.rem {
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	font-size: 12px;
+	font-style: normal; /*&#10006;*/
+	color: #FFF;
+	text-shadow: 0px 0px 10px #444;
+}
+
+.rem:hover {
+	color: #CC0000;
+	cursor: pointer;
+}
+
+
+.margin {
+	margin-bottom: 10px;
+}
+
+.navsChecked {
+	background-color: #C8B666;
+	font-weight: 900;
+	color: #000;
+}
+
+.navs:hover {
+	background-color: #AAA;
+	color: #000;
+	padding-left: 10px;
+	cursor: default;
+}
+
+
+/**/
+
+
+.itemCont {
+	height: 20px;
+	padding: 10px 0;
+	border-bottom: 1px solid #777;
+}
+
+.itemName {
+	float: left;
+	cursor: pointer;
+	width: calc(88% - 60px);
+}
+
+/**/
+
+ul.abn-tree li.abn-tree-row a {
+    padding: 0 10px;
+    color: #333;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus {
+	background-color: #777;
+	font-style: italic;
+	color: #FFF;
+	text-shadow: 1px 1px 2px #FFF;
+}
+
+.nav-pills>li.active>a:hover {
+	text-shadow: 0px 1px 1px #000;
+	background-color: #666;
+}
+
+.nav-pills>li>a {
+	border-radius: 0;
+}
+
+.nav-pills>li>a:hover {
+	background-color: #CCC;
+	color: #000;
+}
+
+/* leaflet */
+
+.leaflet-popup-content {
+	margin: 10px 10px;
+}
