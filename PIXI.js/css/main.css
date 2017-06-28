@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  background-color: #263238; }
+
+body .test-component {
+  margin: auto;
+  width: 1200px;
+  height: 420px; }
+  body .test-component label {
+    color: #B5AEA2;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+    vertical-align: top; }
+  body .test-component #wrapper {
+    border: 1px dashed #B5AEA2;
+    width: 1200px;
+    height: 420px;
+    margin: auto; }
+  body .test-component button {
+    height: 25px;
+    border: 1px solid #E4EFF4;
+    vertical-align: top;
+    width: 42px;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    font-size: 20px; }
+    body .test-component button.inc {
+      background-color: #3AA757; }
+      body .test-component button.inc:hover {
+        cursor: pointer;
+        color: #B5AEA2; }
+    body .test-component button.dec {
+      background-color: #FC0D1B; }
+    body .test-component button:disabled {
+      background-color: #8E3C41; }
+  body .test-component textarea {
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+    background-color: #263238;
+    color: #B5AEA2; }
