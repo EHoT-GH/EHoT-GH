@@ -1,0 +1,599 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body { 
+  cursor: default;
+  -ms-user-select: none; 
+  -moz-user-select: none; 
+  -webkit-user-select: none; 
+  user-select: none;
+  line-height: 1;
+  color: white;
+  background: #D6E8E6;/*#BDDEBA; ------ light green*/
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.space {
+  height: 42px;
+}
+
+.spacex2 {
+  /*height: 100px;*/
+}
+
+.wrapper {
+  padding-top: 1%;
+  margin-top: 20px;
+  width: 98%;
+  margin: auto;
+  text-align:  center;
+  font-size: 36px;
+  text-shadow: 2px 2px 5px black;
+  opacity: 0.91;
+}
+
+#nav-menu {
+  height: 25px;
+  background-color: #83B7B1;
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #628884;
+  box-shadow: 0 2px 12px #555;
+}
+
+#list {
+  width: 968px;
+  margin: auto;
+}
+
+.menu-item {
+  display: inline-block;
+  text-align: center;
+}
+
+.menu-item:hover {
+  background-color: #628884;
+}
+
+.menu-item > a {
+  color: #FFF;
+  vertical-align: center;
+  line-height: 25px;
+  width: 111px;
+}
+
+#gameField {
+  width: 100%;
+  box-shadow: 0 0 15px #777;
+  background-color: #EBFFFD;
+}
+
+.inst {
+  padding: 10px 0;
+  font-size: 36px;
+  color: #FFF;
+  background-color: #628884;
+}
+
+#head {
+  height: 25px;
+  background-color: #628884;
+}
+
+h1.rules {
+  vertical-align: middle;
+  padding-bottom: 25px;
+  color: #F27A7A;
+  font-size: 20px;
+  display: inline-block;
+  z-index: 666;
+  cursor: pointer;
+}
+
+.dispButtons {
+  margin-bottom: 20px;
+  width: 80px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hiddenButtons {
+  display: none;
+}
+
+p.rules {
+  color: #EEE;
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #628884;
+  box-shadow: 0 2px 3px #999;
+}
+
+#popup {
+  display: none;
+}
+
+span.lessThan {
+  font-size: 16px;
+  color: #77bafd;
+  text-shadow: 2px 2px 8px #000;
+}
+
+span.moreThan {
+  font-size: 16px;
+  color: #F27A7A;
+}
+
+#userNumber {
+  text-align: right;
+  width: 69px;
+  height: 38px;
+  font-size: 36px;
+  border-radius: 8px;
+  background-color: #FFF;
+}
+
+@keyframes transText {
+  0% {color: #000;}
+  80% {color: transparent;}
+  100% {color: #000;}
+}
+
+#cleanButton:hover{
+  animation: transText 3s 1;
+}
+
+.buttons {
+  width: 111px;
+  height: 42px;
+  background-color: #6FA29C;
+  border: 2px solid #6FA29C;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px #000;
+  color: #FFF;
+  font-family: verdana, sans-serif;
+}
+
+#startButton {
+  position: relative;
+  /*transition: 0.3s;*/
+  transition: all 0.1s;
+}
+
+#startButton:hover {
+  padding-right: 2px;
+  padding-bottom: 2px;
+}
+
+#startButton:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#startButton:hover::after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttons:hover {
+  color: #000;
+  box-shadow: 2px 2px 3px #000;
+  background-color: #87D5CC;
+  border: 2px solid #87D5CC;
+  cursor: pointer;
+}
+
+.buttons:active {
+  border-left: 4px solid #618D88;
+  border-top: 4px solid #618D88;
+  border-bottom: 0 solid #6FA29C;
+  border-right: 0 solid #6FA29C;
+  box-shadow: 1px 1px 4px #333;
+  background-color: #618D88;
+}
+
+input {
+  vertical-align: middle;
+}
+
+#totalExp {
+  height: 36px;
+  color: #3F9EFD;
+}
+
+@keyframes fadeOut {
+  to {background-color: rgba(255,255,255, 0.7);}
+}
+
+@keyframes fadeIn {
+  0% {background-color: rgba(255,255,255, 0.7);}
+  20% {background-color: rgba(255,242,0, 0.8);}
+  80% {background-color: rgba(255,242,0, 0.6);}
+  100% {background-color: rgba(255,255,255, 0.5);}
+}
+
+@keyframes slowFade {
+  0% {background-color: rgba(255,255,255, 0.5);}
+  20% {background-color: rgba(255,255,255, 0.9);}
+  42% {background-color: transparent;}
+  80% {background-color: rgba(42,150,42, 0.9);}
+  100% {background-color: rgba(255,255,255, 0.5);}
+}
+
+@keyframes shineBorder {
+  0% {box-shadow: 0 0 15px #000;}
+  50% {box-shadow: 0 0 15px #fff;}
+  100% {box-shadow: 0 0 15px #000;}
+}
+
+.animDiv {
+  -webkit-animation: slowFade 3s ease-in-out;
+  -o-animation: slowFade 3s ease-in-out;
+  animation: slowFade 3s ease-in-out;
+  animation-iteration-count: 1;
+}
+
+#createElems {
+  height: 42px;
+  margin: 10px auto;
+  width: 99%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: linear-gradient(to right, #3F9EFD , #F73333);
+  animation: shineBorder 3s infinite ease-in-out;
+}
+
+#createElems > div {
+  vertical-align: top;
+  height: 42px;
+  width: 1.01%;
+  display: inline-block;
+  background-color: rgba(255,255,255, 0.5);
+}
+
+
+#createElems:hover {
+  cursor: pointer;  
+}
+
+#createElems > div:hover {
+  vertical-align: top;
+  height: 38px;
+  width: calc(1.01% - 4px);
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #FF4242;
+  box-shadow: 0 0 7px #FF4242;
+}
+
+#createElems .newElem:hover::before {
+  content: attr(data-title);
+  font-size: 18px;
+  color: #222;
+  z-index: 777;
+  position: relative;
+  left: 15px;
+  top: -42px;
+}
+
+.console {
+  padding-left: 10px;
+  background-color: black;
+  min-height: inherit;
+  text-align: left;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+#wins {
+  color: #1dc942;
+}
+
+#stars {
+  min-height: 69px;
+}
+
+#stars .stars {
+  display: inline-block;
+  position: relative;
+}
+
+#stars .stars:hover::before {
+  content: attr(data-title);
+  font-size: 18px;
+  color: #222;
+  position: absolute;
+  left: 22px;
+  top: 21px;
+  z-index: 778;
+}
+
+#stars .stars:hover {
+  cursor: pointer;
+}
+
+#phone {
+  display: none;
+}
+
+#comp {
+  display: inline-block;
+}
+
+#version {
+  color: #CDFFF9;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #83B7B1;
+  opacity: 0.7;
+  text-align: center;
+  width: 100%;
+}
+
+#gold {
+  color: gold;
+}
+
+@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 992px) {
+  .wrapper {
+    margin-top: 0;
+    width: 95%;
+    font-size: 42px;
+    opacity: 0.96;
+    font-weight: normal;
+    letter-spacing: 1px;
+  }
+
+  .inst {
+    margin: 0;
+    font-size: 60px;
+  }
+
+  .spaceStars {
+    padding: 3px 0;
+    min-height: 69px;
+  }
+
+  .spacex2 {
+    /*height: 330px;*/
+  }
+
+  #head {
+    height: 36px;
+  }
+
+  h1.rules {
+    font-size: 30px;
+    height: 50px;
+    border: 0;
+  }
+
+  input.dispButtons {
+    vertical-align: top;
+    margin-top: 3px;
+    height: 30px;
+    width: 101px;
+    font-size: 20px;
+  }
+
+  p.rules {
+    color: #eee;
+    text-align: justify;
+    padding: 10px 15px;
+    font-size: 24px;
+    text-shadow: none;
+  }
+
+  span.lessThan {
+    font-size: 24px;
+  }
+
+  span.moreThan {
+    font-size: 24px;
+    text-shadow: 2px 2px 8px #000;
+  }
+
+  #userNumber {
+    width: 150px;
+    height: 84px;
+    text-align: center;
+    font-size: 84px;
+    border-radius: 16px;
+  }
+
+  #createElems {
+    height: 50px;
+  }
+
+  #createElems > div {
+    height: 50px;
+  }
+
+  #createElems > div:hover {
+    height: 46px;
+    width: 5px;
+  }
+
+  .buttons {
+    width: 33%;
+    height: 84px;
+    font-size: 42px;
+    border-radius: 16px;
+  }
+
+  .console {
+    padding-left: 20px;
+    padding-bottom: 0;
+    font-size: 16px;
+    opacity: 0.8;
+  }
+
+  #wins {
+    font-size: 24px;
+  }
+
+  #stars {
+    min-height: 69px;
+  }
+
+  #respDesigh {
+    display: none;
+  }
+
+  #phone {
+    display: inline-block;
+  }
+
+  #comp {
+    display: none;
+  }
+
+  #version {
+    opacity: 1;
+    padding: 5px;
+    height: 30px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 768px) and (max-width: 1200px) {
+  #nav-menu {
+    display: none;
+  }
+
+  .wrapper {
+    margin-top: 0;
+    width: 99%;
+    font-size: 42px;
+    opacity: 0.9;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .inst {
+    margin: 0;
+    font-size: 60px;
+  }
+
+  .spaceStars {
+    padding: 3px 0;
+    min-height: 69px;
+  }
+
+  .spacex2 {
+    /*height: 330px;*/
+  }
+
+  #head {
+    height: 36px;
+  }
+
+  h1.rules {
+    font-size: 30px;
+    height: 50px;
+    border: 0;
+  }
+
+  input.dispButtons {
+    vertical-align: top;
+    margin-top: 3px;
+    height: 30px;
+    width: 101px;
+    font-size: 20px;
+  }
+
+  p.rules {
+    color: #eee;
+    text-align: justify;
+    padding: 10px 15px;
+    font-size: 24px;
+    text-shadow: none;
+  }
+
+  span.lessThan {
+    font-size: 24px;
+  }
+
+  span.moreThan {
+    font-size: 24px;
+    text-shadow: 2px 2px 8px #000;
+  }
+
+  #userNumber {
+    width: 75px;
+    height: 42px;
+    text-align: center;
+    font-size: 42px;
+    border-radius: 16px;
+  }
+
+
+  .buttons {
+    width: 22%;
+    height: 42px;
+    font-size: 24px;
+    border-radius: 8px;
+  }
+
+  #createElems {
+    height: 50px;
+  }
+
+  #createElems > div {
+    height: 50px;
+  }
+
+  #createElems > div:hover {
+    height: 46px;
+    width: 5px;
+  }
+
+  .console {
+    padding-left: 20px;
+    font-size: 16px;
+    opacity: 0.8;
+  }
+
+  #wins {
+    font-size: 24px;
+  }
+
+  #stars {
+    min-height: 69px;
+  }
+
+  #respDesigh {
+    display: none;
+  }
+
+  #phone {
+    display: inline-block;
+  }
+
+  #comp {
+    display: none;
+  }
+
+  #version {
+    opacity: 1;
+    padding: 5px;
+    height: 30px;
+    font-size: 30px;
+  }
+}
+}
